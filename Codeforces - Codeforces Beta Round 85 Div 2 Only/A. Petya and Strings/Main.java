@@ -11,20 +11,24 @@ public class Main {
         String b = sc.next();
         a = a.toLowerCase();
         b = b.toLowerCase();
-        int first = 0;
-        int second = 0;
         for (int i = 0; i < a.length() ; i++) {
-            int value1 = (int) a.charAt(i);
-            first += value1;
-            int value2 = (int) b.charAt(i);
-            second += value2;
+            int first = (int) a.charAt(i);
+
+            int second = (int) b.charAt(i);
+            
+            if(first < second){
+                System.out.println(-1);
+                break;
+            } else if (first > second) {
+                System.out.println(1);
+                break;
+            } else if (i == a.length()-1 && first == second) {
+                System.out.println(0);
+            } else {
+                continue;
+            }
         }
-        if(first < second){
-            System.out.println(-1);
-        } else if (first > second) {
-            System.out.println(1);
-        }else {
-            System.out.println(0);
-        }
+        
+
     }
 }
